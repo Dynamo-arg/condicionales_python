@@ -110,13 +110,57 @@ def ej4():
     Luego el programa debe consultar al usuario como quiere ordenar las palabras
     1 - Ordenar por orden alfabético (usando el operador ">")
     2 - Ordenar por cantidad de letras (longitud de la palabra)
-
     Si se ingresa "1" por consola se deben ordenar las 3 palabras por orden alfabético
     e imprimir en pantalla de la mayor a la menor
-
     Si se ingresa "2" por consola se deben ordenar las 3 palabras por cantidad de letras
     e imprimir en pantalla de la mayor a la menor
     '''
+    palabra_1 = str(input("Ingrese la primera palabra:\n"))
+    palabra_2 = str(input("Ingrese la Segunda palabra:\n"))
+    palabra_3 = str(input("Ingrese la Tercera palabra:\n"))
+
+    longitud_1 = len(palabra_1)
+    longitud_2 = len(palabra_2)
+    longitud_3 = len(palabra_3)
+    
+    print("Ingresar 1:(ordenar alfabeticamente) o 2:(Ordenar por cantidad de letras)")
+    orden = int(input())
+
+    # Intente usar el operador ">" como decia el enunciado y no usar otra funcion
+    # Creo que funciona pero no se si era lo solicitado!
+    if orden == 1:
+        if (palabra_1 > palabra_2) and (palabra_1 > palabra_3):
+            if palabra_2 > palabra_3:
+                print("Ordenados de Mayor a menor:", palabra_1, palabra_2, palabra_3)
+            else:
+                print("Ordenados de Mayor a menor:", palabra_1, palabra_3, palabra_2)
+        elif (palabra_2 > palabra_1) and (palabra_2 > palabra_3):
+            if palabra_1 > palabra_3:
+                print("Ordenados de Mayor a menor:" ,palabra_2, palabra_1, palabra_3)
+            else:
+                print("Ordenados de Mayor a menor:" ,palabra_2, palabra_3, palabra_1)
+        elif (palabra_3 > palabra_1) and (palabra_3 > palabra_2):
+            if palabra_2 > palabra_1:
+                print("Ordenados de Mayor a menor:" ,palabra_3, palabra_2, palabra_1)
+            else:
+                print("Ordenados de Mayor a menor:" ,palabra_3, palabra_1, palabra_2)
+    else:
+        if orden == 2:
+            if (longitud_1 > longitud_2) and (longitud_1 > longitud_3):
+                if longitud_2 > longitud_3:
+                    print("Ordenados por Cantidad de Letras:", longitud_1, longitud_2, longitud_3)
+                else:
+                    print("Ordenados por Cantidad de Letras:", longitud_1, longitud_3, longitud_2)
+            elif (longitud_2 > longitud_1) and (longitud_2 > longitud_3):
+                if longitud_1 > longitud_3:
+                    print("Ordenados por Cantidad de Letras:" ,longitud_2, longitud_1, longitud_3)
+                else:
+                    print("Ordenados por Cantidad de Letras:" ,longitud_2, longitud_3, longitud_1)
+            elif (longitud_3 > longitud_1) and (longitud_3 > longitud_2):
+                if longitud_2 > longitud_1:
+                    print("Ordenados por Cantidad de Letras:" ,longitud_3, longitud_2, longitud_1)
+                else:
+                    print("Ordenados por Cantidad de Letras:" ,longitud_3, longitud_1, longitud_2) 
 
 
 def ej5():
